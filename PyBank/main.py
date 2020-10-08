@@ -2,6 +2,7 @@ import os
 import csv
 
 csvpath = os.path.join("Resources", "budget_data.csv")
+analysis = os.path.join("Resources", "analysis.txt")
 
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -53,4 +54,11 @@ with open(csvpath) as csvfile:
     print(f'Greatest Increase in Profits: {grtincmth} ${grtinc}')
     print(f'Greatest Decrease in Profits: {grtdecmth} ${grtdec}')
 
-
+with open(analysis, 'w') as analysis_txt:
+    analysis_txt.write("Financial Analysis\n")
+    analysis_txt.write("------------------------------\n")
+    analysis_txt.write(f'Total months: {rowcount}\n')
+    analysis_txt.write(f'Total: ${totalpl}\n')
+    analysis_txt.write(f'Average Change: ${(round(avgchg, 2))}\n')
+    analysis_txt.write(f'Greatest Increase in Profits: {grtincmth} ${grtinc}\n')
+    analysis_txt.write(f'Greatest Decrease in Profits: {grtdecmth} ${grtdec}\n')
