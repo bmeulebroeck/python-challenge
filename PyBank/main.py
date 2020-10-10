@@ -46,6 +46,8 @@ with open(csvpath) as csvfile:
         prevpl = currentpl
 
     avgchg = sum(monthchg)/len(monthchg)
+    
+    ## These lines used while testing my script
     # print(sum(monthchg))
     # print(len(monthchg))
     # print(avgchg)
